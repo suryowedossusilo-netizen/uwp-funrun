@@ -1,0 +1,239 @@
+/* Early Bird Styles */
+
+.early-bird-banner {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FFA94D 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.early-bird-banner::before {
+    content: '⚡';
+    position: absolute;
+    font-size: 15rem;
+    opacity: 0.1;
+    right: -2rem;
+    top: -2rem;
+    animation: pulse 2s infinite;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-content > i {
+    font-size: 4rem;
+    animation: bounce 1s infinite;
+}
+
+.banner-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+    opacity: 0.95;
+    margin: 0;
+}
+
+.banner-countdown {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.banner-countdown div {
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    min-width: 70px;
+}
+
+.banner-countdown span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.banner-countdown label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Category Card Updates */
+.category-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.early-badge {
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    background: #28a745;
+    color: white;
+    padding: 0.5rem 3rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transform: rotate(-45deg);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.early-badge.ended {
+    background: #6c757d;
+    content: 'REGULER';
+}
+
+.price-container {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.original-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 0.3rem;
+}
+
+.category-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-orange);
+    line-height: 1;
+}
+
+.early-info {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.early-quota {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.early-quota.low {
+    color: #dc3545;
+    animation: pulse 1s infinite;
+}
+
+.early-timer {
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+/* Form Category Option Updates */
+.option-prices {
+    text-align: right;
+}
+
+.option-original {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.option-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+}
+
+.option-early {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+
+.option-early.ended {
+    background: #6c757d;
+    display: none;
+}
+
+/* Summary Updates */
+.early-savings {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-top: 1rem;
+    animation: fadeInUp 0.5s ease;
+}
+
+.early-savings i {
+    margin-right: 0.5rem;
+}
+
+/* Sold Out State */
+.category-card.sold-out {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.category-card.sold-out::after {
+    content: 'SOLD OUT';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    background: #dc3545;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    border-radius: var(--radius-md);
+    z-index: 20;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-countdown {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .early-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 2.5rem;
+        left: -30px;
+        top: 15px;
+    }
+}
